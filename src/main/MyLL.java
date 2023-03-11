@@ -1,3 +1,5 @@
+package main;
+
 public class MyLL {
     private static class Node{
         private int value;
@@ -79,7 +81,7 @@ public class MyLL {
         return sb.toString();
     }
 
-    public int solve(){
+    private Node getSolve(){
         if (isEmpty()){
             throw new RuntimeException("List is empty");
         }
@@ -101,7 +103,10 @@ public class MyLL {
             }
             current = current.getNext();
         }
-        assert ans != null; /**!!!*/
-        return ans.getValue();
+        return ans;
+    }
+
+    public int solve(){
+        return getSolve().getValue();
     }
 }
